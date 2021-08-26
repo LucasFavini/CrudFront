@@ -1,0 +1,51 @@
+<div class="container" id="menu">
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+        <h3>Ingrese datos del alumno</h3>
+
+        <div class="container mt-4" style="width: 400px;">
+            <label>nombre</label>
+            <input type="text" class="form-control" formControlName="nombre">
+
+            <label>Apellido</label>
+            <input type="text" class="form-control" formControlName="apellido">
+
+            <label>Dni</label>
+            <input type="text" class="form-control" formControlName="dni">
+
+            <label>Edad</label>
+            <input type="text" class="form-control" formControlName="edad">
+
+            <button class="btn btn-outline-success mt-2" type="submit" (click)="addAlumno()">cargar</button>
+        </div>
+
+    </form>
+    <div>
+        <table class="table mt-2">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Dni</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let alumno of listaAlumnos">
+                    <td>{{alumno.nombre}}</td>
+                    <td>{{alumno.apellido}}</td>
+                    <td>{{alumno.dni}}</td>
+                    <td>{{alumno.edad}}</td>
+                    <td>
+                        <button class="btn btn-outline-info mt-2" (click)="editAlumno(alumno)">*</button>
+                        <button class="btn btn-outline-danger mt-2" (click)="deleteAlumno(alumno.id!)">X</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

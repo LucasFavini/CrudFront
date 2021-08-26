@@ -1,0 +1,20 @@
+<form [formGroup]="formulario">
+
+<h3>Editar datos del alumno</h3>
+<div class="container mt-4" style="width: 400px;">
+    <label>nombre</label>
+    <input type="text" class="form-control" formControlName="nombre">
+
+    <label>Apellido</label>
+    <input type="text" class="form-control" formControlName="apellido">
+
+    <label>Dni</label>
+    <input type="text" class="form-control" formControlName="dni">
+
+    <label>Edad</label>
+    <input type="text" class="form-control" formControlName="edad">
+
+    <button class="btn btn-outline-success mt-2" type="submit" (click)="editAlumno()">Editar</button>
+    <button class="btn btn-outline-danger mt-2" routerLink="/" >Volver</button>
+ </div> 
+</form>
